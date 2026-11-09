@@ -1,5 +1,4 @@
-# .github/workflows/routing-tests.yml
-name: routing-tests
+name: 002-routing-behavior-testing
 
 on:
   push:
@@ -34,7 +33,7 @@ jobs:
         run: echo "$HOME/bin" >> "$GITHUB_PATH"
 
       - name: Render prod manifests
-        run: helm template shop ./002-routing-behavior-testing/gateway-api -f ./002-routing-behavior-testing/gateway-api/values-prod.yaml > prod.yaml
+        run: helm template shop ./002-routing-behavior-testing/gateway-api -f ./002-routing-behavior-testing/gateway-api/values-prod.yaml > 002-routing-behavior-testing/prod.yaml> prod.yaml
 
       - name: Run behavior tests
         run: istio-route test --manifests prod=002-routing-behavior-testing/prod.yaml 002-routing-behavior-testing/features
