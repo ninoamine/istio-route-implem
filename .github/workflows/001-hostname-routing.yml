@@ -5,6 +5,8 @@ on:
         paths:
           - '001-hostname-routing/**'
 
+env:
+  ISTIO_ROUTE_VERSION: 0.4.0
 
 jobs:
   check:
