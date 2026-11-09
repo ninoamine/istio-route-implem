@@ -1,0 +1,12 @@
+namespace: shop
+
+gateway:
+  name: shop
+  hostname: shop.example.com
+
+httpRoute:
+  name: shop
+  parentRefName: shop
+  hostname: shop.example.com
+  path: /api-prod
+  backendName: api-prod

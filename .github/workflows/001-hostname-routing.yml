@@ -4,6 +4,7 @@ on:
     push:
         paths:
           - '001-hostname-routing/**'
+          - '.github/workflows/001-hostname-routing.yml'
 
 env:
   ISTIO_ROUTE_VERSION: 0.4.0

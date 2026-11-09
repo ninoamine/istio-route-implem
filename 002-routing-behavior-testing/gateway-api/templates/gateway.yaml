@@ -1,0 +1,15 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: {{.Values.gateway.name}}
+  namespace: {{.Values.namespace}}
+spec:
+  gatewayClassName: example
+  listeners:
+    - name: https
+      hostname: {{.Values.gateway.hostname}}
+      port: 443
+      protocol: HTTPS
+      allowedRoutes:
+        namespaces:
+          from: Same
